@@ -1,0 +1,32 @@
+<div class="container my-5 w-75">
+    <!-- <h3>{{ registerForm.get("phone")?.errors | json }}</h3> -->
+    <h2>please enter your verification Code</h2>
+  
+    <form [formGroup]="verifyCodeForm" (ngSubmit)="iseVrifiedCode()">
+      <label for="code">Code : </label>
+      <input
+        type="text"
+        id="code"
+        formControlName="resetCode"
+        class="form-control mb-2"
+      />
+      <div
+        *ngIf="
+          verifyCodeForm.get('resetCode')?.errors &&
+          verifyCodeForm.get('resetCode')?.touched
+        "
+        class="alert alert-danger"
+      >
+        <p *ngIf="verifyCodeForm.get('resetCode')?.getError('required')" class="mb-0">
+          Verification Code is required!
+        </p>
+      </div>
+
+  
+      <button type="submit"  [disabled]="verifyCodeForm.invalid" class="btn btn-dark px-3 d-block ms-auto my-3">
+        <i *ngIf="isLoading" class="fa fa-spinner fa-spin"></i>
+        <span *ngIf="!isLoading">Verify</span>
+      </button>
+    </form>
+  </div>
+  

@@ -1,0 +1,184 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary white-color">
+  <div class="container">
+    <a class="navbar-brand py-0" [routerLink]="'home'">
+      <img src="assets/images/logo.webp" alt="logo-imag" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 main-items" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="'home'"
+            router-link-active="bg-active-nav"
+            aria-current="page"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="'cart'"
+            router-link-active="bg-active-nav"
+            aria-current="page"
+            >Cart</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            router-link-active="bg-active-nav"
+            aria-current="page"
+            [routerLink]="'wishList'"
+            >wish list</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            router-link-active="bg-active-nav"
+            aria-current="page"
+            [routerLink]="'produts'"
+            >Products</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            router-link-active="bg-active-nav"
+            aria-current="page"
+            [routerLink]="'Categories'"
+            >Categories</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            [routerLink]="'brands'"
+            router-link-active="bg-active-nav"
+            >Brand</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            [routerLink]="'setting'"
+            router-link-active="bg-active-nav"
+            >Setting</a
+          >
+        </li>
+      </ul>
+      
+        <ul class="navbar-nav  ms-auto sec-nav-items p-1 ">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              router-link-active="bg-active-nav"
+              aria-current="page"
+              [routerLink]="'register'"
+            >
+              <i class="fa-solid fa-moon fa-lg"></i>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              router-link-active="bg-active-nav"
+              aria-current="page"
+              [routerLink]="'register'"
+            >
+            <i class="fa-brands fa-square-instagram fa-lg"></i>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              router-link-active="bg-active-nav"
+              aria-current="page"
+              [routerLink]="'register'"
+            >
+              <i class="fa-brands fa-facebook fa-lg"></i>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              aria-current="page"
+              [routerLink]="'register'"
+              router-link-active="bg-active-nav"
+
+            >
+              <i class="fa-brands fa-twitter fa-lg"></i>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              router-link-active="bg-active-nav"
+              aria-current="page"
+              [routerLink]="'register'"
+            >
+              <i class="fa-brands fa-linkedin fa-lg"></i>
+            </a>
+          </li>
+
+          <li class="nav-item" *ngIf="!isLoggedIn">
+            <a
+              class="nav-link"
+              router-link-active="bg-active-nav"
+              aria-current="page"
+              [routerLink]="'register'"
+              >Register</a
+            >
+          </li>
+          <li class="nav-item" *ngIf="!isLoggedIn">
+            <a
+              class="nav-link"
+              router-link-active="bg-active-nav"
+              aria-current="page"
+              [routerLink]="'login'"
+              >Login</a
+            >
+          </li>
+          <li class="nav-item" *ngIf="isLoggedIn" (click)="logOut()">
+            <a
+              class="nav-link"
+              router-link-active="bg-active-nav"
+              aria-current="page"
+              [routerLink]="'login'"
+              >LogOut</a
+            >
+          </li>
+
+          <li class="nav-item position-relative" *ngIf="isLoggedIn">
+            <a
+              class="nav-link"
+              [routerLink]="'cart'"
+              >
+              <i class="fa fa-shopping-cart fs-4" aria-hidden="true"></i>
+              <div class="badge  position-absolute top-0 end-0 bg-dark">{{numOfCartItemsInNav}}</div>
+              </a
+            >
+          </li>
+        </ul>
+      
+    </div>
+  </div>
+</nav>

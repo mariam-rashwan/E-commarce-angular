@@ -1,0 +1,36 @@
+a>img{
+    width:8rem;
+    
+
+}
+.navbar-brand{
+    align-items: center;
+    padding-inline-end: 0.2rem;
+}
+.navbar{
+    padding:0 !important;
+}
+.nav-item{
+    /* margin:0 0.1rem; */
+    padding: 0rem 0.4rem;
+    transition: 0.7ms;
+}
+.main-items .nav-item:hover , .main-items .nav-item:active{
+    background-color: var(--active-nav);
+    
+}
+
+.main-items  .nav-link{
+    text-transform:uppercase;
+    font-weight: 600;
+    color: var(--main-color);
+    font-size: 15px;
+    padding: 1.3rem 0.5rem;
+}
+.sec-nav-items .nav-link{
+    text-transform:capitalize;
+    font-weight: 600;
+    color: var(--main-color);
+    font-size: 14px;
+    padding: 0.1rem;
+}

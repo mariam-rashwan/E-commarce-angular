@@ -1,0 +1,57 @@
+<div class="container my-5">
+  <div class="d-flex justify-content-between align-items-center pb-3">
+    <h2>Cart Shop</h2>
+    <button class="btn btn-dark">
+      <a [routerLink]="['/checkout/',this.cartDetails.data._id]"> continue to pay </a>
+    </button>
+  </div>
+  <div class="bg-light py-3" *ngIf="cartDetails?.data">
+    <div class="d-flex p-4 justify-content-between">
+      <h4>
+        Total item : <span>{{ cartDetails.numOfCartItems }}</span>
+      </h4>
+
+      <h4 class="px-1">
+        Total Price : <span>{{ cartDetails.data.totalCartPrice | currency }}</span>
+      </h4>
+    </div>
+    <div
+      class="row border-bottom mb-3"
+      *ngFor="let product of cartDetails.data.products"
+    >
+      <div class="col-md-2">
+        <img [src]="product.product.imageCover" class="w-100 px-2" alt="" />
+      </div>
+      <div class="col-md-8">
+        <div class="item">
+          <h4>{{ product.product.title }}</h4>
+          <p class="text-muted">{{ product.product.category.name }}</p>
+          <div class="d-flex align-items-center">
+            <p class="text-muted mb-0">{{ product.price | currency}}</p>
+            <button
+              class="btn p-0 text-danger ms-4"
+              (click)="deleteItem(product.product.id)"
+            >
+              <i class="fa-regular fa-trash-can"></i> Remove
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <button
+          class="btn btn-outline-dark"
+          (click)="updateCount(product.count - 1, product.product.id)"
+        >
+          -
+        </button>
+        <span class="mx-2">{{ product.count }}</span>
+        <button
+          class="btn btn-outline-dark"
+          (click)="updateCount(product.count + 1, product.product.id)"
+        >
+          +
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

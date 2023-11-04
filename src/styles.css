@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+  :root{
+    --main-font: 'Raleway', sans-serif;
+    --white-color-main:rgb(255,255,255);
+    --main-color:#222121;
+    --active-nav: #f4f4f4;
+  }
+
+  body{
+   font-family:var(--main-font);
+   background-color:var(--bg-white-main);
+   color: var(--main-color);
+
+  }
+  .bg-active-nav{
+    background-color: var(--active-nav);
+  }
+  .black-color{
+   color: var(--main-color);
+
+  }
+  .white-color{
+    background-color:var(--white-color-main) !important;
+  }
+
+  a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }

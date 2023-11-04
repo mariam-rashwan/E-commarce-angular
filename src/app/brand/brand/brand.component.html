@@ -1,0 +1,19 @@
+<div class="container my-4" >
+    <h3 class="text-center my-4  py-2 h2 fw-bold">
+        All Brands
+    </h3>
+    <div class="row g-4 my-4">
+      <div class="col-md-3" *ngFor="let brand of allBrands">
+        <div class="card">
+          <img
+            [src]="brand.image"
+            alt="catageory-img"
+            class="w-100 p-0 m-0"
+            height="150"
+          />
+          <!-- <app-product-item [product]="product"></app-product-item> -->
+          <h5 class="card-title p-4 text-center">{{ brand.name }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>

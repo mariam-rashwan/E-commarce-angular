@@ -1,0 +1,19 @@
+<div class="product p-3">
+  <a [routerLink]="['/productDetails',product.id]">
+    <img [src]="product.imageCover" class="w-100" alt="productImage" />
+    <p>{{ product.category.name }}</p>
+    <h2 class="h5">
+      {{ product.title |trim:2 }}
+    </h2>
+    <div class="d-flex justify-content-between py-2">
+      <span>{{ product.price }}</span>
+      <div class="px-2">
+        <i class="fa fa-star"></i>
+        {{ product.ratingsAverage }}
+      </div>
+    </div>
+  </a>
+  <button class="btn btn-danger w-50 m-2" (click)="addToWishlist(product.id)">AddWishList</button>
+
+    <button class="btn btn-dark w-100" (click)="addToCart(product.id)">+ Add</button>
+  </div>
