@@ -1,0 +1,11 @@
+section{
+    margin-bottom: 4rem;
+    padding: 10px 0;
+}
+.slider-caption{
+position: absolute;
+top: 35%;
+bottom: 50%;
+left:5%;
+height: 3rem;
+}

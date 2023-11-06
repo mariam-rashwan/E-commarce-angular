@@ -9,23 +9,28 @@ a>img{
 }
 .navbar{
     padding:0 !important;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+
 }
 .nav-item{
     /* margin:0 0.1rem; */
-    padding: 0rem 0.4rem;
+    padding: 0rem 0.2rem;
     transition: 0.7ms;
 }
-.main-items .nav-item:hover , .main-items .nav-item:active{
+.main-items .nav-item .nav-link:hover , .main-items .nav-item .nav-link:active{
     background-color: var(--active-nav);
     
 }
+
 
 .main-items  .nav-link{
     text-transform:uppercase;
     font-weight: 600;
     color: var(--main-color);
     font-size: 15px;
-    padding: 1.3rem 0.5rem;
+    padding: 1.3rem 0.7rem;
+    transition: 0.5ms;
+
 }
 .sec-nav-items .nav-link{
     text-transform:capitalize;

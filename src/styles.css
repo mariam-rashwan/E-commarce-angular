@@ -10,7 +10,7 @@
 
   body{
    font-family:var(--main-font);
-   background-color:var(--bg-white-main);
+   background-color:rgb(253, 253, 253);
    color: var(--main-color);
 
   }
@@ -30,3 +30,6 @@
     color: inherit;
     cursor: pointer;
   }
+  .pages-top{
+    margin-top: 5.5rem;
+}

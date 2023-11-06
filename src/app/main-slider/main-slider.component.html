@@ -1,12 +1,52 @@
-<owl-carousel-o [options]="customOptions" >
+<section>
+  <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide>
-        <img src="assets/images/main-slider/slider-image-1.jpeg" height="400" alt="">
-    </ng-template>  
+      <img
+        src="assets/images/main-slider/slider-image-1.jpeg"
+        height="480"
+        alt=""
+      />
+      <div class="slider-caption">
+        <h3 class="fw-bold h2">Shop Now! <br />For New Products</h3>
+        <a class="btn btn-dark rounded-1 px-4" [routerLink]="'/produts'"
+          >Shop Now</a
+        >
+      </div>
+    </ng-template>
     <ng-template carouselSlide>
-        <img src="assets/images/main-slider/slider-image-2.jpeg" height="400" alt="">
-    </ng-template>  
+      <img src="assets/images/bg-2.webp" height="480" alt="" />
+    </ng-template>
     <ng-template carouselSlide>
-        <img src="assets/images/main-slider/slider-image-3.jpeg" height="400"alt="">
-    </ng-template>  
-    
+      <img
+        src="assets/images/main-slider/slider-image-2.jpeg"
+        height="480"
+        alt=""
+      />
+      <div class="slider-caption">
+        <h3 class="fw-bold h2">Shop Now! <br />For New Products</h3>
+        <a class="btn btn-dark rounded-1 px-4" [routerLink]="'/produts'"
+          >Shop Now</a
+        >
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <img src="assets/images/bg-3.webp" height="480" alt="" />
+    </ng-template>
+    <ng-template carouselSlide>
+      <img
+        src="assets/images/main-slider/slider-image-3.jpeg"
+        height="480"
+        alt=""
+      />
+      <div class="slider-caption">
+        <h3 class="fw-bold h2">Shop Now! <br />For New Products</h3>
+        <a class="btn btn-dark rounded-1 px-4" [routerLink]="'/produts'"
+          >Shop Now</a
+        >
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <img src="assets/images/bg-1.webp" height="480" alt="" />
+    </ng-template>
   </owl-carousel-o>
+</section>

@@ -1,11 +1,18 @@
-<owl-carousel-o *ngIf="routePath === '/home'" [options]="customOptions">
-  <ng-container *ngFor="let slide of allcategories">
-    <ng-template carouselSlide>
-      <img height="300" [src]="slide.image" />
-      <h3>{{ slide.name }}</h3>
-    </ng-template>
-  </ng-container>
-</owl-carousel-o>
+<div class="container">
+  <div class="row">
+    <h3 class="h2 fw-bold py-3 p-3">Main Categories</h3>
+  </div>
+  <owl-carousel-o *ngIf="routePath === '/home'" [options]="customOptions">
+    <ng-container *ngFor="let slide of allcategories">
+      <ng-template carouselSlide class="text-center">
+        <div class="slide card rounded-1 border-0 shadow-sm">
+          <img height="230" [src]="slide.image" class="w-100" />
+          <h5 class="text-center p-1 fw-bold p-3">{{ slide.name }}</h5>
+        </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</div>
 
 <div class="container" *ngIf="routePath === '/Categories'">
   <div class="row g-4 my-4">

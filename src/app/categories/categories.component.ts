@@ -19,13 +19,28 @@ export class CategoriesComponent implements OnInit{
     touchDrag: false,
     pullDrag: false,
     dots: false,
+    margin:15,
+    autoplay:true,
+    autoplayTimeout:3000,
+
     navSpeed: 700,
-    navText: ['', ''],
+    navText: ['&#8249', '&#8250;'],
     responsive: {
       0: {
-        items: 8
+        items: 1
       },
-     
+      400: {
+        items: 3
+      },
+      600: {
+        items:5
+      },
+      940: {
+        items:5
+      },
+      1000: {
+        items:5
+      },
     },
     nav: true
   }

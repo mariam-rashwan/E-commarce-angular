@@ -28,6 +28,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { VerifyCodeComponent } from './verify-code/verify-code.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     HttpClientModule,
     BrowserAnimationsModule,
     CarouselModule ,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [
     {

@@ -14,15 +14,18 @@ export class MainSliderComponent {
     touchDrag: false,
     pullDrag: false,
     dots: false,
+    autoWidth: true,
     navSpeed: 700,
-    navText: ['', ''],
+    autoplay:true,
+    navText: ['', '',''],
     responsive: {
       0: {
         items: 1
       },
-      1: {
+      600: {
         items: 2
       },
+     
     
      
     },

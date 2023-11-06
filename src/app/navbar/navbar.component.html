@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary white-color">
+<nav class="navbar navbar-expand-lg bg-body-tertiary white-color fixed-top">
   <div class="container">
     <a class="navbar-brand py-0" [routerLink]="'home'">
-      <img src="assets/images/logo.webp" alt="logo-imag" />
+      <img src="assets/images/logo.webp" alt="logo-imag" class="py-2" />
     </a>
     <button
       class="navbar-toggler"
@@ -20,7 +20,7 @@
           <a
             class="nav-link"
             [routerLink]="'home'"
-            router-link-active="bg-active-nav"
+            routerLinkActive="bg-active-nav"
             aria-current="page"
             >Home</a
           >
@@ -29,7 +29,7 @@
           <a
             class="nav-link"
             [routerLink]="'cart'"
-            router-link-active="bg-active-nav"
+            routerLinkActive="bg-active-nav"
             aria-current="page"
             >Cart</a
           >
@@ -38,7 +38,7 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            router-link-active="bg-active-nav"
+            routerLinkActive="bg-active-nav"
             aria-current="page"
             [routerLink]="'wishList'"
             >wish list</a
@@ -47,7 +47,7 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            router-link-active="bg-active-nav"
+            routerLinkActive="bg-active-nav"
             aria-current="page"
             [routerLink]="'produts'"
             >Products</a
@@ -56,7 +56,7 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            router-link-active="bg-active-nav"
+            routerLinkActive="bg-active-nav"
             aria-current="page"
             [routerLink]="'Categories'"
             >Categories</a
@@ -67,7 +67,7 @@
             class="nav-link"
             aria-current="page"
             [routerLink]="'brands'"
-            router-link-active="bg-active-nav"
+            routerLinkActive="bg-active-nav"
             >Brand</a
           >
         </li>
@@ -76,109 +76,89 @@
             class="nav-link"
             aria-current="page"
             [routerLink]="'setting'"
-            router-link-active="bg-active-nav"
+            routerLinkActive="bg-active-nav"
             >Setting</a
           >
         </li>
       </ul>
-      
-        <ul class="navbar-nav  ms-auto sec-nav-items p-1 ">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              router-link-active="bg-active-nav"
-              aria-current="page"
-              [routerLink]="'register'"
-            >
-              <i class="fa-solid fa-moon fa-lg"></i>
-            </a>
-          </li>
 
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              router-link-active="bg-active-nav"
-              aria-current="page"
-              [routerLink]="'register'"
-            >
+      <ul class="navbar-nav ms-auto sec-nav-items p-1">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page">
+            <i class="fa-solid fa-moon fa-lg"></i>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="bg-active-nav"
+            aria-current="page"
+            target="_blank"
+            [href]="'https://www.instagram.com/'"
+          >
             <i class="fa-brands fa-square-instagram fa-lg"></i>
-            </a>
-          </li>
+          </a>
+        </li>
 
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              router-link-active="bg-active-nav"
-              aria-current="page"
-              [routerLink]="'register'"
-            >
-              <i class="fa-brands fa-facebook fa-lg"></i>
-            </a>
-          </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            target="_blank"
+            aria-current="page"
+            [href]="'https://www.facebook.com/'"
+          >
+            <i class="fa-brands fa-facebook fa-lg"></i>
+          </a>
+        </li>
 
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              aria-current="page"
-              [routerLink]="'register'"
-              router-link-active="bg-active-nav"
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            [href]="'https://twitter.com/?lang=en'"
+            target="_blank"
+          >
+            <i class="fa-brands fa-twitter fa-lg"></i>
+          </a>
+        </li>
 
-            >
-              <i class="fa-brands fa-twitter fa-lg"></i>
-            </a>
-          </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            target="_blank"
+            [href]="'https://www.linkedin.com/'"
+          >
+            <i class="fa-brands fa-linkedin fa-lg"></i>
+          </a>
+        </li>
 
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              router-link-active="bg-active-nav"
-              aria-current="page"
-              [routerLink]="'register'"
-            >
-              <i class="fa-brands fa-linkedin fa-lg"></i>
-            </a>
-          </li>
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link" aria-current="page" [routerLink]="'register'"
+            >Register</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link" aria-current="page" [routerLink]="'login'"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn" (click)="logOut()">
+          <a class="nav-link" aria-current="page" [routerLink]="'login'"
+            >LogOut</a
+          >
+        </li>
 
-          <li class="nav-item" *ngIf="!isLoggedIn">
-            <a
-              class="nav-link"
-              router-link-active="bg-active-nav"
-              aria-current="page"
-              [routerLink]="'register'"
-              >Register</a
-            >
-          </li>
-          <li class="nav-item" *ngIf="!isLoggedIn">
-            <a
-              class="nav-link"
-              router-link-active="bg-active-nav"
-              aria-current="page"
-              [routerLink]="'login'"
-              >Login</a
-            >
-          </li>
-          <li class="nav-item" *ngIf="isLoggedIn" (click)="logOut()">
-            <a
-              class="nav-link"
-              router-link-active="bg-active-nav"
-              aria-current="page"
-              [routerLink]="'login'"
-              >LogOut</a
-            >
-          </li>
-
-          <li class="nav-item position-relative" *ngIf="isLoggedIn">
-            <a
-              class="nav-link"
-              [routerLink]="'cart'"
-              >
-              <i class="fa fa-shopping-cart fs-4" aria-hidden="true"></i>
-              <div class="badge  position-absolute top-0 end-0 bg-dark">{{numOfCartItemsInNav}}</div>
-              </a
-            >
-          </li>
-        </ul>
-      
+        <li class="nav-item position-relative" *ngIf="isLoggedIn">
+          <a class="nav-link" [routerLink]="'cart'">
+            <i class="fa fa-shopping-cart fs-4" aria-hidden="true"></i>
+            <div class="badge position-absolute top-0 end-0 bg-dark">
+              {{ numOfCartItemsInNav }}
+            </div>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
