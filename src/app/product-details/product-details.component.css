@@ -1,0 +1,11 @@
+.descrip{
+    font-style: italic;
+}
+.wishlist-heart{
+    top:1.1rem;
+    left:2.6rem;
+}
+.btn-dark{
+    width: 65% !important;
+    margin-inline-start: 4rem;
+}

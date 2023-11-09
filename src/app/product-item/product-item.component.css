@@ -2,3 +2,13 @@ a{
     text-decoration: none;
     color: inherit;
 }
+.wishlist-heart{
+  position: relative;
+  padding-bottom: 1rem;
+
+}
+.wishlist-heart i{
+    position: absolute;
+    right: 0.9rem;
+    font-size: 1.6rem;
+  }

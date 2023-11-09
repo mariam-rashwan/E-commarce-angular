@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../product';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { CartService } from '../shared/services/cart.service';
+import { WishListService } from '../wish-list/wish-list.service';
 
 @Component({
   selector: 'app-product-details',
@@ -21,6 +22,8 @@ export class ProductDetailsComponent implements OnInit{
     pullDrag: false,
     dots: false,
     navSpeed: 700,
+    autoplay:true,
+
     navText: ['', ''],
     responsive: {
       0: {
@@ -32,7 +35,8 @@ export class ProductDetailsComponent implements OnInit{
   }
   constructor(private _productsService:ProductsService,
     private _activatedRoute:ActivatedRoute,
-    private _cartService:CartService
+    private _cartService:CartService,
+    private _wishListService:WishListService
     ){
     this._activatedRoute.paramMap.subscribe((res:any)=>{
      console.log(res.params.id);
@@ -60,6 +64,21 @@ export class ProductDetailsComponent implements OnInit{
     this._cartService.addProductToCart(id).subscribe({
       next:(res)=>{
         console.log(res);
+      },
+      error:(err)=>{
+        console.log(err);
+      }
+
+    })
+
+
+  }
+
+  addToWishlist(id: string) {
+    this._wishListService.addProductToWishList(id).subscribe({
+      next:(res)=>{
+        console.log("wishlistRes",res);
+        // this._cartService.numOfCartItems.next(res.numOfCartItems)
       },
       error:(err)=>{
         console.log(err);

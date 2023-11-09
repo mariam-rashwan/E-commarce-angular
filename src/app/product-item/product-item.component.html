@@ -1,19 +1,35 @@
-<div class="product p-3 card rounded-1 border-0 shadow-sm ">
-  <a [routerLink]="['/productDetails',product.id]">
-    <img [src]="product.imageCover" class="w-100" alt="productImage" />
-    <p>{{ product.category.name }}</p>
-    <h2 class="h5">
-      {{ product.title |trim:2 }}
-    </h2>
-    <div class="d-flex justify-content-between py-2">
-      <span>{{ product.price }}</span>
-      <div class="px-2">
-        <i class="fa fa-star"></i>
-        {{ product.ratingsAverage }}
+<div class="product card rounded-0 border-0">
+  <a [routerLink]="['/productDetails', product.id]">
+    <div class="img-container m-0 p-0">
+      <img
+        [src]="product.imageCover"
+        class="w-100 productImage"
+        alt="productImage"
+      />
+    </div>
+    <div class="p-3">
+      <small class="text-muted">{{ product.category.name }}</small>
+      <h2 class="h5 fw-bold ">
+        {{ product.title | trim : 2 }}
+      </h2>
+      <div class="d-flex justify-content-between py-1">
+        <span class="fw-bold">{{ product.price | currency }}</span>
+        <div class="px-2">
+          <i class="fa fa-star text-warning"></i>
+          {{ product.ratingsAverage }}
+        </div>
       </div>
     </div>
   </a>
-  <button class="btn btn-danger w-50 m-2" (click)="addToWishlist(product.id)">AddWishList</button>
-
-    <button class="btn btn-dark w-100" (click)="addToCart(product.id)">+ Add</button>
+  <a class="m-2 text-danger wishlist-heart" (click)="addToWishlist(product.id)">
+    <i class="fa-regular fa-heart fa-lg"></i>
+  </a>
+  <div class="flex-item-center my-1 mb-2">
+    <button
+      class="btn btn-dark w-75 rounded-1 addBtn"
+      (click)="addToCart(product.id)"
+    >
+      + Add
+    </button>
   </div>
+</div>

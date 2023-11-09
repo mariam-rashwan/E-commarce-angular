@@ -18,6 +18,8 @@ export class HttpInterceptorInterceptor implements HttpInterceptor {
       this._loaderService.show();
 
     }
+
+
     console.log(request);
    let newReq= request.clone({
       headers:request.headers.set("token",`${localStorage.getItem("userToken")}`)
